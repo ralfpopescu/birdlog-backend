@@ -1,0 +1,22 @@
+{
+  "name": "birdlog-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^3.0.2",
+    "knex": "^0.14.6",
+    "mssql": "^4.1.0",
+    "mysql": "^2.15.0",
+    "pg": "^7.4.3",
+    "postgrator": "^3.6.0",
+    "webpack": "^4.12.0"
+  }
+}
