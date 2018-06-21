@@ -1,6 +1,6 @@
 CREATE TABLE journal_entries (
-  month number NOT NULL,
-  day number NOT NULL,
-  year number NOT NULL,
+  month integer NOT NULL,
+  day integer NOT NULL,
+  year integer NOT NULL,
   entry text
 );
