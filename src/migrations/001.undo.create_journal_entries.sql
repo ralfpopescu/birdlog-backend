@@ -1,1 +1,1 @@
-DROP TABLE journal_entries;
+DROP TABLE journal_entry;

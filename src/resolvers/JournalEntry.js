@@ -1,5 +1,5 @@
 const Query: { [string]: GraphQLFieldResolver<void, Context> } = {
-  entry: (obj, args, context, info) => {
+  journalEntry: (obj, args, context, info) => {
       return args.id
     }
 }

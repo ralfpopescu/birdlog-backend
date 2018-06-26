@@ -6,6 +6,7 @@ import type { GraphQLSchema } from 'graphql'
 import { makeExecutableSchema } from 'graphql-tools'
 import graphqlHTTP from 'express-graphql'
 import { concatFiles } from './services/fs'
+import path from 'path'
 
 const pg = require('pg');
 const graphql = require('graphql');
@@ -13,7 +14,7 @@ const graphql = require('graphql');
 const port = 3000;
 const app = express();
 
-const typeDefs = concatFiles(path.resolve(__dirname, 'schema'))
+const typeDefs = concatFiles(path.resolve(__dirname, '../src', 'schema'))
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const conString = "postgres://ralfpopescu:@localhost:5432/birdlog";

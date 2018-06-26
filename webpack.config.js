@@ -14,6 +14,10 @@ module.exports = {
     publicPath: '/'
   },
   target: 'node',
+  node: {
+  __dirname: false,
+  __filename: false,
+  },
   externals: nodeExternals(),
   plugins: [
     new webpack.DefinePlugin({

@@ -1,6 +1,16 @@
-type entry {
+type JournalEntry {
   month: Int
   day: Int
   year: Int
   entry: String
+}
+
+type JournalDate {
+  month: Int
+  day: Int
+  year: Int
+}
+
+extend type Query {
+  journalEntry(date: JournalDate): JournalEntry
 }
