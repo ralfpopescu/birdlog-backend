@@ -1,14 +1,14 @@
 type JournalEntry {
-  month: Int
-  day: Int
-  year: Int
+  month: Int!
+  day: Int!
+  year: Int!
   entry: String
 }
 
-type JournalDate {
-  month: Int
-  day: Int
-  year: Int
+input JournalDate {
+  month: Int!
+  day: Int!
+  year: Int!
 }
 
 extend type Query {

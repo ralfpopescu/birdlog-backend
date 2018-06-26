@@ -29,7 +29,6 @@ app.get('/', (req, resp) => {
     console.log(err.stack)
   } else {
     resp.send(res.rows[0])
-    console.log(res.rows[0])
   }
   })
 });
