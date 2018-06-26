@@ -23,6 +23,16 @@ module.exports = {
     })
   ],
   module: {
-    
+    rules: [
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        query: {
+          babelrc: false,
+          presets: [["es2015", { modules: false }], "react", "stage-3"],
+      }
+    }
+    ]
   }
 };
