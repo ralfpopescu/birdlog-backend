@@ -11,6 +11,18 @@ input JournalDate {
   year: Int!
 }
 
+input CreateJournalEntryInput {
+  journalEntry: JournalEntry!
+}
+
+type CreateJournalEntryPayload {
+  journalEntry: JournalEntry!
+}
+
 extend type Query {
   journalEntry(date: JournalDate): JournalEntry
+}
+
+extend type Mutation {
+  createOrganization(input: CreateJournalEntryInput!): CreateJournalEntryPayload
 }
