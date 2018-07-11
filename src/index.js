@@ -1,6 +1,7 @@
 import express from 'express';
 
 import { insertJournalEntry, getJournalEntry } from './queries/queries'
+import { executeQuery } from './dal/dal'
 import resolvers from './resolvers'
 import type { GraphQLSchema } from 'graphql'
 import { makeExecutableSchema } from 'graphql-tools'
@@ -24,14 +25,15 @@ client.connect();
 
 
 app.get('/', (req, resp) => {
-  client.query(insertJournalEntry, [1, 2, 3, 'hello'], (err, res) => {
-  if (err) {
-    console.log(err.stack)
-  } else {
-    resp.send(res.rows[0])
-    console.log(res.rows[0])
-  }
-  })
+  // client.query(insertJournalEntry, [1, 2, 3, 'why'], (err, res) => {
+  // if (err) {
+  //   console.log(err.stack)
+  // } else {
+  //   resp.send(res.rows[0])
+  // }
+  // })
+  console.log('inserting')
+  resp.send(executeQuery(insertJournalEntry, [1, 2, 3, 'dal']))
 });
 
 app.get('/q', (req, resp) => {

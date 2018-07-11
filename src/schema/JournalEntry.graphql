@@ -1,16 +1,32 @@
 type JournalEntry {
-  month: Int
-  day: Int
-  year: Int
+  month: Int!
+  day: Int!
+  year: Int!
   entry: String
 }
 
-type JournalDate {
-  month: Int
-  day: Int
-  year: Int
+input JournalDate {
+  month: Int!
+  day: Int!
+  year: Int!
+}
+
+input CreateJournalEntryInput {
+  month: Int!
+  day: Int!
+  year: Int!
+  entry: String
+}
+
+type CreateJournalEntryPayload {
+  journalEntry: JournalEntry!
 }
 
 extend type Query {
   journalEntry(date: JournalDate): JournalEntry
+  journalEntries: [JournalEntry]
+}
+
+extend type Mutation {
+  createJournalEntry(input: CreateJournalEntryInput!): CreateJournalEntryPayload
 }
