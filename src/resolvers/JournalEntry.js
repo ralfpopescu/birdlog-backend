@@ -3,6 +3,7 @@ import { insertJournalEntry, getJournalEntry, getAllJournalEntries  } from '../q
 
 const Query = {
   journalEntry: (obj, args, context, info) => {
+<<<<<<< HEAD
       console.log(args)
       return executeQuery(getJournalEntry)
     },
@@ -11,6 +12,12 @@ const Query = {
       console.log('resolver')
       console.log(q.rows)
       return q.rows
+=======
+      return { month: 1,
+              day: 2,
+              year: 3,
+              entry: 'wow'}
+>>>>>>> 02d308b211a889f501255805085f82e2b3e407b0
     }
 }
 
