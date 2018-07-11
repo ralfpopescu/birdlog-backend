@@ -12,14 +12,10 @@ input JournalDate {
 }
 
 input CreateJournalEntryInput {
-<<<<<<< HEAD
   month: Int!
   day: Int!
   year: Int!
   entry: String
-=======
-  journalEntry: JournalEntry!
->>>>>>> 02d308b211a889f501255805085f82e2b3e407b0
 }
 
 type CreateJournalEntryPayload {
