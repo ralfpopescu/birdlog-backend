@@ -1,4 +1,4 @@
-import { executeQuery } from '../dal/dal'
+import { executeQuery, executeMutation } from '../dal/dal'
 import { insertJournalEntry, getJournalEntry, getAllJournalEntries  } from '../queries/queries'
 
 const Query = {
@@ -15,12 +15,19 @@ const Query = {
 }
 
 const Mutation = {
-  createJournalEntry: (obj, args, context, info) => {
+  createJournalEntry: async (obj, args, context, info) => {
+    const input = []
     console.log(args)
-    return executeMutation(getAllJournalEntries)
+    input.push(args.input.month)
+    input.push(args.input.day)
+    input.push(args.input.year)
+    input.push(args.input.entry)
+    const m = await executeMutation(insertJournalEntry, input)
+    console.log(m.rows[0])
+    return { journalEntry: m.rows[0] }
   }
 }
 
-const resolvers = { Query }
+const resolvers = { Query, Mutation }
 
 export default resolvers
